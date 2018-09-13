@@ -1,7 +1,7 @@
 package br.edu.utfpr.exemplomaven;
 
 
-import io.github.bonigarcia.wdm.WebDriverManager;
+//import io.github.bonigarcia.wdm.WebDriverManager;
 import java.io.File;
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
@@ -33,7 +33,7 @@ public class ExemploTest {
     
     @BeforeClass
     public static void beforeClass() {
-        WebDriverManager.chromedriver().setup();
+        //WebDriverManager.chromedriver().setup();
     }
     
     @Before
