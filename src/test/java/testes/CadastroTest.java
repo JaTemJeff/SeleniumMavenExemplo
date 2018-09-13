@@ -66,7 +66,8 @@ public class CadastroTest extends BaseTest {
         String nome = gerador.stringAleatoria(10);
         String email = nome+"@hotmail.com";
         
-        cadastroPage.cadastra(nome, email, " ");
+        cadastroPage.
+                cadastra(nome, email, " ");
         
         //Verifica se exibe mensagem de campo obrigatório
         Assert.assertTrue(dsl.retornaSeTextoExisteNaPagina("Please enter a password."));
