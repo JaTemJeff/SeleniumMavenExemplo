@@ -35,4 +35,11 @@ public class WebDriverFactory {
         }
         return driver;
     }
+    
+    public static void killDriver() {
+        if (driver != null) {
+            driver.quit();
+            driver = null;
+        }
+    }
 }

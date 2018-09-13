@@ -1,14 +1,34 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package core;
 
-/**
- *
- * @author Notebook
- */
+import java.util.Random;
+
 public class GeneratorUtils {
-    
+
+    public String numericoAleatorio(int tamanho) {
+        String letras = "0123456789";
+
+        Random random = new Random();
+
+        String armazenaChaves = "";
+        int index = -1;
+        for (int i = 0; i < tamanho; i++) {
+            index = random.nextInt(letras.length());
+            armazenaChaves += letras.substring(index, index + 1);
+        }
+        return armazenaChaves;
+    }
+
+    public String stringAleatoria(int tamanho) {
+        String letras = "abcdefghijklmnopqrstuvwxyz";
+
+        Random random = new Random();
+
+        String armazenaChaves = "";
+        int index = -1;
+        for (int i = 0; i < tamanho; i++) {
+            index = random.nextInt(letras.length());
+            armazenaChaves += letras.substring(index, index + 1);
+        }
+        return armazenaChaves;
+    }
 }
