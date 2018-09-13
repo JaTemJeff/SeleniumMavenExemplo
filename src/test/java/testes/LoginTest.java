@@ -1,13 +1,13 @@
 package testes;
 
+import core.AppSettings;
 import core.DSL;
 import core.WebDriverFactory;
-import static java.time.Clock.system;
 import org.junit.After;
+import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
 import pages.LoginPage;
 
 public class LoginTest {
@@ -17,19 +17,20 @@ public class LoginTest {
     
     @Before
     public void inicializa(){
-       driver = WebDriverFactory.getDriver();        
+        driver = WebDriverFactory.getDriver();        
         dsl = new DSL(driver);
         loginPage = new LoginPage(driver);
     }
    
     @After
     public void finaliza(){
-        driver.quit();
+        //driver.quit();
     }
     
     @Test
-    public void loginTest(){
-        loginPage.logar();
-        //
+    public void loginCorretoTest(){
+        loginPage.logar(AppSettings.LOGIN, AppSettings.SENHA);
+        //Verifica se está na página de "friends"
+        Assert.assertEquals("https://ration.io/friends", driver.getCurrentUrl());
     }
 }
